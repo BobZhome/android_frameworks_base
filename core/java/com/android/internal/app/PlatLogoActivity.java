@@ -31,12 +31,32 @@ public class PlatLogoActivity extends Activity {
         
         final String text;
         final int resource;
-        if (getIntent().getBooleanExtra("special", false)) {
+        if (getIntent().getStringExtra("special").equals("douche")) {
             text = "Brought to you by your friends at TeamDouche";
             resource = com.android.internal.R.drawable.tdyacht;
-        } else {
-            text = "Zombie art by Jack Larson";
-            resource = com.android.internal.R.drawable.platlogo;
+        }else{
+          if (getIntent().getStringExtra("special").equals("bobz")) {
+              text = "Thanks for the awesome kernel Bob!";
+              resource = com.android.internal.R.drawable.bobzhome;
+          }else{
+            if (getIntent().getStringExtra("special").equals("cassini")) {
+                text = "Actual photo of Saturn taken by Cassini";
+                resource = com.android.internal.R.drawable.saturn;
+            }else{
+              if (getIntent().getStringExtra("special").equals("blarf")) {
+                  text = "Thanks Blarf! +1";
+                  resource = com.android.internal.R.drawable.ihologo;
+              }else{
+                if (getIntent().getStringExtra("special").equals("xmas")) {
+                    text = "Seasons Greetings!";
+                    resource = com.android.internal.R.drawable.xmaslogo;
+                }else{
+                    text = "Zombie art by Jack Larson";
+                    resource = com.android.internal.R.drawable.platlogo;
+                }
+              }
+            }
+          }
         }
         
         mToast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
