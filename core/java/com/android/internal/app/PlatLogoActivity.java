@@ -48,8 +48,8 @@ public class PlatLogoActivity extends Activity {
                   resource = com.android.internal.R.drawable.ihologo;
               }else{
                 if (getIntent().getStringExtra("special").equals("xmas")) {
-                    text = "Seasons Greetings!";
-                    resource = com.android.internal.R.drawable.xmaslogo;
+                    text = "Happy New Year!";
+                    resource = com.android.internal.R.drawable.newyears;
                 }else{
                     text = "Zombie art by Jack Larson";
                     resource = com.android.internal.R.drawable.platlogo;
