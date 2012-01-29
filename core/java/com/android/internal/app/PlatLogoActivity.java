@@ -36,7 +36,7 @@ public class PlatLogoActivity extends Activity {
             resource = com.android.internal.R.drawable.tdyacht;
         }else{
           if (getIntent().getStringExtra("special").equals("bobz")) {
-              text = "Thanks for the awesome kernel Bob!";
+              text = "Current kernel by:";
               resource = com.android.internal.R.drawable.bobzhome;
           }else{
             if (getIntent().getStringExtra("special").equals("cassini")) {
