@@ -561,7 +561,7 @@ class ServerThread extends Thread {
         }
 
         // make sure the ADB_ENABLED setting value matches the secure property value
-      Settings.Secure.putInt(mContentResolver, Settings.Secure.ADB_PORT,
+        Settings.Secure.putInt(mContentResolver, Settings.Secure.ADB_PORT,
                 Integer.parseInt(SystemProperties.get("service.adb.tcp.port", "-1")));
 
         Settings.Secure.putInt(mContentResolver, Settings.Secure.ADB_ENABLED,
