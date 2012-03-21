@@ -48,6 +48,8 @@ class SensorDevice : public Singleton<SensorDevice> {
     // fixed-size array after construction
     struct Info {
         Info() { }
+        Info() : count(0) { }
+        int32_t count;
         KeyedVector<void*, nsecs_t> rates;
     };
     DefaultKeyedVector<int, Info> mActivationCount;
