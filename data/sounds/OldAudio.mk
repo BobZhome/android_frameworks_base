@@ -71,3 +71,4 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/ringtones/old/Ring_Synth_03.ogg:system/media/audio/ringtones/Ring_Synth_03.ogg \
 	$(LOCAL_PATH)/ringtones/old/Ring_Synth_04.ogg:system/media/audio/ringtones/Ring_Synth_04.ogg \
 	$(LOCAL_PATH)/ringtones/old/Ring_Synth_05.ogg:system/media/audio/ringtones/Ring_Synth_05.ogg \
+	$(LOCAL_PATH)/ringtones/old/somebodys.ogg:system/media/audio/ringtones/somebodys.ogg \
