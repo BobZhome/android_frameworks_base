@@ -52,11 +52,24 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)
 include $(BUILD_PREBUILT)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE := fallback_fonts-ko.xml
+LOCAL_SRC_FILES := $(LOCAL_MODULE)
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)
+include $(BUILD_PREBUILT)
+
 droidsans_fallback_src := DroidSansFallbackFull.ttf
 extra_font_files := \
 	DroidSans.ttf \
 	DroidSans-Bold.ttf \
-	fallback_fonts-ja.xml
+	DroidSansEthiopic-Regular.ttf \
+	DroidSansTamil-Regular.ttf \
+	DroidSansTamil-Bold.ttf \
+	MTLmr3m.ttf \
+	fallback_fonts-ja.xml \
+	fallback_fonts-ko.xml
 endif  # SMALLER_FONT_FOOTPRINT
 
 ################################
