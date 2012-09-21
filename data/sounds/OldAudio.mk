@@ -16,6 +16,7 @@ PRODUCT_COPY_FILES += \
 
 # Effects
 PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/effects/ogg/camera_focus.ogg:system/media/audio/ui/camera_focus.ogg \
 	$(LOCAL_PATH)/effects/old/camera_click.ogg:system/media/audio/ui/camera_click.ogg \
 	$(LOCAL_PATH)/effects/old/Dock.ogg:system/media/audio/ui/Dock.ogg \
 	$(LOCAL_PATH)/effects/old/Effect_Tick.ogg:system/media/audio/ui/Effect_Tick.ogg \
