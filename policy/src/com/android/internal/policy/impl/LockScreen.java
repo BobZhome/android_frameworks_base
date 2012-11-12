@@ -95,6 +95,7 @@ class LockScreen extends LinearLayout implements KeyguardScreen {
     private boolean mSilentMode;
     private AudioManager mAudioManager;
     private boolean mEnableMenuKeyInLockScreen;
+    private boolean mUnlockKeyDown = false;
 
     private KeyguardStatusViewManager mStatusViewManager;
     private UnlockWidgetCommonMethods mUnlockWidgetMethods;
@@ -736,6 +737,7 @@ class LockScreen extends LinearLayout implements KeyguardScreen {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+        mUnlockKeyDown = true;
         if (keyCode == KeyEvent.KEYCODE_BACK
                 || keyCode == KeyEvent.KEYCODE_HOME
                 || keyCode == KeyEvent.KEYCODE_MENU) {
@@ -747,9 +749,15 @@ class LockScreen extends LinearLayout implements KeyguardScreen {
 
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        if ((keyCode == KeyEvent.KEYCODE_MENU && mEnableMenuKeyInLockScreen) ||
-            (keyCode == KeyEvent.KEYCODE_HOME && mHomeUnlockScreen)) {
-            mCallback.goToUnlockScreen();
+        int flags = event.getFlags();
+        // make sure the keydown is from a screen on state
+        if (mUnlockKeyDown) {
+            mUnlockKeyDown = false;
+            boolean mNotLongPress = (flags & KeyEvent.FLAG_CANCELED_LONG_PRESS) == 0;
+            if (mNotLongPress && ((keyCode == KeyEvent.KEYCODE_MENU && mEnableMenuKeyInLockScreen) ||
+                    (keyCode == KeyEvent.KEYCODE_HOME && mHomeUnlockScreen))) {
+                mCallback.goToUnlockScreen();
+            }
         }
         return false;
     }
@@ -805,6 +813,15 @@ class LockScreen extends LinearLayout implements KeyguardScreen {
         if (action != null) {
             String uri = Settings.System.getString(context.getContentResolver(), action);
             if (uri != null && runAction(context, uri) != ACTION_RESULT_NOTRUN) {
+                long[] pattern = getLongPressVibePattern(context);
+                if (pattern != null) {
+                    Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+                    if (pattern.length == 1) {
+                        v.vibrate(pattern[0]);
+                    } else {
+                        v.vibrate(pattern, -1);
+                    }
+                }
                 return true;
             }
         }
@@ -837,6 +854,26 @@ class LockScreen extends LinearLayout implements KeyguardScreen {
         } else {
             am.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
         }
+    }
+
+    private static long[] getLongPressVibePattern(Context context) {
+        if (Settings.System.getInt(context.getContentResolver(),
+                Settings.System.HAPTIC_FEEDBACK_ENABLED, 0) == 0) {
+            return null;
+        }
+
+        int[] defaultPattern = context.getResources().getIntArray(
+                com.android.internal.R.array.config_longPressVibePattern);
+        if (defaultPattern == null) {
+            return null;
+        }
+
+        long[] pattern = new long[defaultPattern.length];
+        for (int i = 0; i < defaultPattern.length; i++) {
+            pattern[i] = defaultPattern[i];
+        }
+
+        return pattern;
     }
 
     void updateConfiguration() {
