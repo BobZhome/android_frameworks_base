@@ -32,18 +32,11 @@ PRODUCT_PACKAGES := \
     RobotoCondensed-Bold.ttf \
     RobotoCondensed-Italic.ttf \
     RobotoCondensed-BoldItalic.ttf \
-    DroidNaskh-Regular.ttf \
-    DroidNaskh-Regular-SystemUI.ttf \
-    DroidSansDevanagari-Regular.ttf \
-    DroidSansHebrew-Regular.ttf \
-    DroidSansHebrew-Bold.ttf \
-    DroidSansThai.ttf \
     DroidSerif-Regular.ttf \
     DroidSerif-Bold.ttf \
     DroidSerif-Italic.ttf \
     DroidSerif-BoldItalic.ttf \
     DroidSansMono.ttf \
-    DroidSansArmenian.ttf \
     DroidSansGeorgian.ttf \
     AndroidEmoji.ttf \
     Clockopia.ttf \
