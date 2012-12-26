@@ -24,27 +24,22 @@ public class WiFiDisplayTile extends QuickSettingsTile{
             QuickSettingsController qsc) {
         super(context, inflater, container, qsc);
 
-        onClick = new OnClickListener() {
+        mOnClick = new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 startSettingsActivity(android.provider.Settings.ACTION_WIFI_DISPLAY_SETTINGS);
             }
         };
+        qsc.registerAction(DisplayManager.ACTION_WIFI_DISPLAY_STATUS_CHANGED, this);
+        applyWiFiDisplayChanges();
+    }
 
-        mBroadcastReceiver = new BroadcastReceiver() {
-
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                WifiDisplayStatus status = (WifiDisplayStatus)intent.getParcelableExtra(DisplayManager.EXTRA_WIFI_DISPLAY_STATUS);
-                enabled = status.getFeatureState() == WifiDisplayStatus.FEATURE_STATE_ON;
-                connected = status.getActiveDisplay() != null;
-                applyWiFiDisplayChanges();
-            }
-        };
-
-        mIntentFilter = new IntentFilter(DisplayManager.ACTION_WIFI_DISPLAY_STATUS_CHANGED);
-
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        WifiDisplayStatus status = (WifiDisplayStatus)intent.getParcelableExtra(DisplayManager.EXTRA_WIFI_DISPLAY_STATUS);
+        enabled = status.getFeatureState() == WifiDisplayStatus.FEATURE_STATE_ON;
+        connected = status.getActiveDisplay() != null;
         applyWiFiDisplayChanges();
     }
 
