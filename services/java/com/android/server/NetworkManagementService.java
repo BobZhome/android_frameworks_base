@@ -1021,7 +1021,7 @@ public class NetworkManagementService extends INetworkManagementService.Stub
             Resources resources = mContext.getResources();
             if (resources.getBoolean(
                         com.android.internal.R.bool.config_wifiApFirmwareReload)) {
-                wifiFirmwareReload(softapIface, "AP");
+                wifiFirmwareReload(wlanIface, "AP");
             }
 
             if (resources.getBoolean(
