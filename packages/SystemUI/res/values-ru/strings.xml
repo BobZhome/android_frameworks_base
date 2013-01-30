@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<?xml version="1.0" encoding="utf-8"?>
+<!--
 /**
  * Copyright (c) 2009, The Android Open Source Project
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); 
- * you may not use this file except in compliance with the License. 
- * You may obtain a copy of the License at 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0 
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software 
- * distributed under the License is distributed on an "AS IS" BASIS, 
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
- * See the License for the specific language governing permissions and 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
  * limitations under the License.
  */
  -->
@@ -178,12 +178,13 @@
     <string name="accessibility_rotation_lock_on_landscape" msgid="6731197337665366273">"Выбрана только альбомная ориентация экрана."</string>
     <string name="accessibility_rotation_lock_on_portrait" msgid="5809367521644012115">"Выбрана только книжная ориентация экрана."</string>
     <string name="jelly_bean_dream_name" msgid="5992026543636816792">"BeanFlinger"</string>
+    <string name="bean_dream_settings_cid_title">Голова CID\'а</string>
+    <string name="bean_dream_settings_cid_summary">Заменить желейные конфеты на голову CID\'а</string>
     <string name="start_dreams" msgid="7219575858348719790">"Заставка"</string>
     <string name="ethernet_label" msgid="7967563676324087464">"Ethernet"</string>
     <string name="quick_settings_airplane_mode_label" msgid="5510520633448831350">"Режим полета"</string>
     <string name="quick_settings_battery_charging_label" msgid="490074774465309209">"<xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
-    <!-- String.format failed for translation -->
-    <!-- no translation found for quick_settings_battery_charged_label (8865413079414246081) -->
+    <string name="quick_settings_battery_charged_label">Заряжено</string>
     <skip />
     <string name="quick_settings_bluetooth_label" msgid="6304190285170721401">"Bluetooth"</string>
     <string name="quick_settings_bluetooth_multiple_devices_label" msgid="3912245565613684735">"Bluetooth (<xliff:g id="NUMBER">%d</xliff:g>)"</string>
@@ -211,6 +212,7 @@
     <string name="status_bar_help_title" msgid="1199237744086469217">"Это панель уведомлений"</string>
     <string name="status_bar_help_text" msgid="7874607155052076323">"Ее можно открыть, пролистнув экран вниз."\n"Чтобы открыть настройки, проведите пальцем вниз ещё раз."</string>
 
+    <string name="quick_settings_gps_off">GPS выкл.</string>
     <string name="quick_settings_screen_sleep">Сон</string>
     <string name="quick_settings_ringer_on">Вкл. звук</string>
     <string name="quick_settings_ringer_off">Выкл. звук</string>
@@ -224,4 +226,22 @@
     <string name="quick_settings_report_bug">Отчёт об ошибке</string>
     <string name="quick_settings_sync">Синхронизация</string>
     <string name="quick_settings_torch">Фонарь</string>
+    <string name="quick_settings_torch_off">Фонарь выкл.</string>
+    <string name="quick_settings_screen_timeout">Тайм-аут</string>
+    <string name="quick_settings_usb_tether_off_label">Отключено</string>
+    <string name="quick_settings_usb_tether_connected_label">Выключен</string>
+    <string name="quick_settings_usb_tether_on_label">Включен</string>
+    <string name="quick_settings_wifiap">Wi-Fi модем</string>
+    <string name="quick_settings_wifiap_off">Wi-Fi модем выкл.</string>
+
+    <!-- Dialog title for navigation bar button selection -->
+    <string name="navbar_dialog_title">Выберите действие</string>
+    <string name="navbar_home_button">Домой</string>
+    <string name="navbar_recent_button">Запущ. приложения</string>
+    <string name="navbar_search_button">Поиск</string>
+    <string name="navbar_back_button">Назад</string>
+    <string name="navbar_empty_button">Пустая кнопка</string>
+    <string name="navbar_menu_conditional_button">Меню (скрывающ.)</string>
+    <string name="navbar_menu_always_button">Меню (не скрывающ.)</string>
+    <string name="navbar_menu_big_button">Меню</string>
 </resources>
